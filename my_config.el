@@ -16,6 +16,7 @@
 (add-to-list 'load-path "~/emacs/custom_keys") ;; Custom keys config
 (add-to-list 'load-path "~/emacs/objx") ;; objective c and j config
 (add-to-list 'load-path "~/emacs/escreen") ;; escreen
+(add-to-list 'load-path "~/emacs/ozflymake") ;; oz-flymake
 
 (require 'erlang_mode_config) ;; Loading Erlang mode
 (require 'flymake_config) ;; Loading flymake
@@ -27,3 +28,4 @@
 (require 'custom_keys_config) ;; custom key bindings
 (require 'objj-mode)
 (require 'escreen)
+(require 'oz-flymake)
