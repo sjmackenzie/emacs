@@ -1,0 +1,48 @@
+Setting up Emacs flymake for Mozart/Oz
+======================================
+
+Flymake is an Emacs package that checks for syntax errors on the fly and highlights them in the buffer.
+It is part of Emacs 22.
+Flymake is not difficult to use it, but there are two problems when using it with Oz:
+* Error messages of the Oz compiler are multi-line messages, but Flymake only parses single-line messages.
+* Functor definitions have to be treated differently from source files which are intended to run in the OPI.
+This little package solves these problems.
+
+
+Changes
+=======
+Version 0.4: twice as fast
+Version 0.3: now checks that imported procedures are used with the correct number of arguments.
+
+
+Installation
+============
+- Extract the archive, for example to "oz-flymake-0.3" in your home directory.
+- Create the three helper functors by calling "ozmake" from within that directory.
+- Add the contents of ".emacs" to your personal ".emacs" file.
+  Adjust the path to oz-flymake in the Emacs Lisp function "flymake-oz-executable" (default: "~/oz-flymake-0.4/ozflymake").
+- Restart Emacs and load an Oz source file.
+  Lines containing syntax errors will be underlined in red.
+  Lines with warnings will be underlined in orange.
+  Use Ctrl-Tab to jump to the next error line and watch the error message in the echo area.
+
+- If your project needs additional options to compile successfully, edit the ozflymake(.bat) file.
+
+Many thanks to Torsten Anders for providing a patch which adds support for taking OZRC into account (see http://www.mozart-oz.org/home/doc/opi/node4.html#section.mozart). 
+
+
+Procedure arity check
+=====================
+Oz-flymake now comes with a tool which checks the correct arity of procedure application for imported procedures (the compiler checks this for system and local procedures).
+
+On slow machines, this will cause a noticeable delay.
+If you want to disable the feature, edit "flymake-oz-check-arity" in your ".emacs" file.
+
+This functionality is implemented by "CheckArity.ozf". You may also use this tool independently from oz-flymake. Syntax:
+ozengine CheckArity.ozf --source <source file>.oz
+
+Limitations:
+CheckArity is not able to check every procedure application. Both nested functors and using procedure values as a arguments get in the way of finding procedures.
+CheckArity does not produce any false positives, but is does not find every arity error.
+
+Wolfgang.Meyer@gmx.net
