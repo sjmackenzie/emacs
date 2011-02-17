@@ -17,6 +17,7 @@
 (add-to-list 'load-path "~/emacs/objx") ;; objective c and j config
 (add-to-list 'load-path "~/emacs/escreen") ;; escreen
 (add-to-list 'load-path "~/emacs/oz-flymake") ;; oz-flymake
+(add-to-list 'load-path "~/emacs/oz") ;; mozart oz
 
 (require 'erlang_mode_config) ;; Loading Erlang mode
 (require 'flymake_config) ;; Loading flymake
@@ -29,3 +30,4 @@
 (require 'objj-mode)
 (require 'escreen)
 (require 'oz-flymake)
+(require 'oz)
