@@ -12,6 +12,7 @@
 (add-to-list 'load-path "~/emacs/anything") ;; Quicksilver-like switcher
 ;;(add-to-list 'load-path "~/emacs/distel") ;; Distel package
 (add-to-list 'load-path "~/emacs/whitespace") ;; Whitespace package
+(add-to-list 'load-path "~/emacs/color-theme") ;; colour theme
 (add-to-list 'load-path "~/emacs/autosave") ;; Autosave config
 (add-to-list 'load-path "~/emacs/custom_keys") ;; Custom keys config
 (add-to-list 'load-path "~/emacs/objx") ;; objective c and j config
@@ -26,6 +27,7 @@
 (require 'whitespace_config) ;; Loading whitespace
 (require 'git) ;; Loading Git mode
 (require 'autosave_config) ;; Configures autosaving
+(require 'color-theme) ;; adds color-theme
 (require 'custom_keys_config) ;; custom key bindings
 (require 'objj-mode)
 (require 'escreen)
