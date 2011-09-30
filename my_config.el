@@ -19,6 +19,7 @@
 (add-to-list 'load-path "~/emacs/escreen") ;; escreen
 (add-to-list 'load-path "~/emacs/oz-flymake") ;; oz-flymake
 (add-to-list 'load-path "~/emacs/oz") ;; mozart oz
+(add-to-list 'load-path "~/emacs/go") ;; golang
 
 (require 'erlang_mode_config) ;; Loading Erlang mode
 (require 'flymake_config) ;; Loading flymake
@@ -33,3 +34,4 @@
 (require 'escreen)
 (require 'oz-flymake)
 (require 'oz)
+(require 'go-mode-load)
