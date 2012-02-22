@@ -35,3 +35,8 @@
 (require 'oz-flymake)
 (require 'oz)
 (require 'go-mode-load)
+
+(split-window-horizontally)
+(other-window 1)
+(shell)
+(other-window 1)
